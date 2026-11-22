@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aroha Health Guidance App - Next.js Version
 
-## Getting Started
+A modern health guidance application built with **Next.js 14+**, **React 19**, **Tailwind CSS v4**, and **TypeScript**.
 
-First, run the development server:
+## 🎯 Overview
+
+This is a Next.js conversion of the original Vite + React application. The app provides:
+
+- 🏥 Multi-step health assessment wizard
+- 💬 AI-powered chat assistant for guided health conversations
+- 🎯 Personalized health recommendations
+- 👨‍⚕️ Expert-reviewed clinical pathways
+- 📋 Customizable care plans based on user preferences
+
+## 🗂️ Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout component
+│   ├── page.tsx            # Main application page (client component)
+│   └── globals.css         # Global styles & design system
+│
+└── components/
+    ├── Icon.tsx            # Reusable SVG icon system (15 icons)
+    ├── Navigation.tsx       # Top navigation bar
+    ├── Hero.tsx            # Hero section with search & symptoms
+    ├── Assessment.tsx      # Multi-step wizard (Steps 1-3)
+    ├── Recommendation.tsx  # Final guidance display (Step 4)
+    ├── AssessmentSection.tsx  # Wrapper for assessment flow
+    ├── ChatAssistant.tsx   # Chat modal with AI flow
+    ├── ConcernsExplorer.tsx # Concern cards section
+    └── TrustSection.tsx    # Expert panel & trust section
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ (recommended: 20+)
+- pnpm or npm
+
+### Installation
+
+```bash
+cd health-guidance-next
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be available at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🎨 Design System
 
-To learn more about Next.js, take a look at the following resources:
+### Colors (CSS Variables)
+- **Primary**: `--teal` (#17695f) - Action buttons and accents
+- **Background**: `--cream` (#faf9f5) - Main background
+- **Text**: `--ink` (#18312e) - Primary text
+- **Muted**: `--muted` (#667a76) - Secondary text
+- **Accent**: `--peach` (#f6e5d9) - Warnings and special UI
+- **Secondary Background**: `--mint` (#e5f3ee) - Hover states
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Typography
+- **Serif Font**: DM Serif Display (headings)
+- **Sans Font**: Manrope (body & UI text)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 Component Architecture
 
-## Deploy on Vercel
+### State Management
+All state is managed at the root level in `page.tsx`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Component Props
+All components receive props via function parameters with TypeScript interfaces.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Technologies
+
+- **Framework**: Next.js 14+ (App Router)
+- **Language**: TypeScript 5.7
+- **Styling**: Tailwind CSS v4 + Custom CSS
+- **UI**: React 19 with client components
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+```bash
+vercel deploy
+```
+
+### Build & Run
+```bash
+npm run build
+npm start
+```
+
+---
+
+**Ready to run?** Start with `npm install && npm run dev`
