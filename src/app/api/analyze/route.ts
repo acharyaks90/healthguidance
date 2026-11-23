@@ -36,14 +36,14 @@ Provide:
 
 Format your response as JSON with keys: recommendation, actionItems (array), warnings (array), professionalAdvice`
 
-    const response = await fetch('https://api.grok.com/openai/v1/chat/completions', {
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.GROK_API_KEY}`,
+        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'grok-2',
+        model: 'mixtral-8x7b-32768',
         messages: [
           {
             role: 'system',
@@ -62,7 +62,7 @@ Format your response as JSON with keys: recommendation, actionItems (array), war
 
     if (!response.ok) {
       const error = await response.text()
-      return NextResponse.json({ error: `Grok API error: ${error}` }, { status: response.status })
+      return NextResponse.json({ error: `Groq API error: ${error}` }, { status: response.status })
     }
 
     const data = await response.json()
