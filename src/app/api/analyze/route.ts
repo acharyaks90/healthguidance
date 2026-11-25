@@ -43,7 +43,7 @@ Format your response as JSON with keys: recommendation, actionItems (array), war
         'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'mixtral-8x7b-32768',
+        model: 'openai/gpt-oss-20b',
         messages: [
           {
             role: 'system',
